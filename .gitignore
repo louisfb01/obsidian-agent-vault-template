@@ -1,0 +1,15 @@
+# Obsidian per-user state (keep the shared config, ignore local cruft)
+.obsidian/workspace.json
+.obsidian/workspace-mobile.json
+.obsidian/cache
+.obsidian/graph.json
+
+# Secrets — never
+.env
+.env.*
+*.key
+*.pem
+
+# OS noise
+.DS_Store
+.trash/
