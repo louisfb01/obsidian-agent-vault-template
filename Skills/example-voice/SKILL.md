@@ -1,7 +1,7 @@
 ---
 name: example-voice
 description: "Apply the owner's writing voice to any draft. Use when a post, script, newsletter, or reply needs to sound like the owner instead of generic AI prose: tone, persona, sentence rhythm, anti-slop rules, and first-person grounding. This is a style layer, not a first-draft writer."
-updated: 2026-07-19
+updated: 2026-10-27
 ---
 
 # Example Voice
@@ -14,14 +14,14 @@ output skill (post, script, newsletter).
 
 ## Load First
 
-1. `<grounding skill>` — for the owner's background, opinions, and safe positioning.
+1. `<grounding skill>` for the owner's background, opinions, and safe positioning.
 2. The output skill that produced the draft (post / script / review).
 
 ## Inputs
 
 - A complete first draft to rewrite.
 - The target platform (post, video, email) so rhythm and length fit.
-- If there is no draft yet, stop — this skill edits, it does not originate.
+- If there is no draft yet, stop: this skill edits, it does not originate.
 
 ## Workflow
 
@@ -32,9 +32,9 @@ output skill (post, script, newsletter).
 
 ## Output
 
-- The rewritten draft, saved in the relevant `Areas/` folder (not `working-dir/`).
+- The rewritten draft, saved in its project folder (see [[AGENT-RULES]] §1 and §3), not `working-dir/`.
 - This skill produces notes, not code, so nothing gets pushed to a repo. (Code
-  tasks keep their code in an external repo — see [[AGENT-RULES]] §3.)
+  tasks keep their code in an external repo; see [[AGENT-RULES]] §7.)
 
 ## Guardrails
 
@@ -43,7 +43,6 @@ output skill (post, script, newsletter).
 - Do not invent metrics, anecdotes, tools used, or feelings.
 - Keep the owner's actual opinions; do not sand off the edges into neutral prose.
 
-## Feedback
+## Feedback log
 
-See [[Skills/example-voice/FEEDBACK|FEEDBACK]]. Append after every run;
-promote repeated lessons here and bump `updated:`. See [[AGENT-RULES]] §2.
+After each run, add an entry to [[Skills/example-voice/FEEDBACK|FEEDBACK]]. When a lesson repeats, promote it into this file and bump `updated:`. Rules: [[AGENT-RULES]] §5.

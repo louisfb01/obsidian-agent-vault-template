@@ -1,17 +1,42 @@
+---
+type: hub
+status: active
+created: 2026-10-27
+updated: 2026-10-27
+summary: "How the agents' scratch area is organised: one folder per task, research projects, the agent log, and vault maintenance."
+tags:
+  - working-dir
+---
+
 # working-dir
 
-The agent's scratch area. All messy, in-progress work lives here — one folder per
-task — so it never clutters the vault or the Areas notes.
+The agents' scratch area. Messy, in-progress work lives here, one folder per task, so it never clutters the area folders. Rules: [[AGENT-RULES]] §3.
 
-## Convention
+## Task folders
+
 ```
 working-dir/
-  <task-name>/
-    index.md   # what this task is + current status (use the "Working task" template)
+  <task>/
+    index.md   # what this task is and its current status (Templates/Working task.md)
     log.md     # append-only run log: what was tried, decided, and why
     raw/       # unprocessed inputs, dumps, downloads, transcripts
 ```
 
-## Rules
-- Final deliverables move to an Areas/ folder when done. They do not stay here.
-- Keep index.md current so a future session can resume without re-reading log.md.
+The finished result is written into its project folder in the right area. The scratch folder stays.
+
+## Research projects
+
+`research-<topic>/` folders keep sources and synthesis apart:
+
+```
+research-<topic>/
+  raw/        # sources as captured, never edited
+  wiki/       # derived pages: overview, synthesis, open questions, sources/, concepts/
+  index.md    # generated from index.yaml when the header says so; rebuild it, do not hand-edit
+  log.md      # rounds of research, newest last
+```
+
+## Shared folders
+
+- `agent-log/`: one file per month, one line per run that wrote to the vault ([[working-dir/agent-log/README|format]]).
+- `vault-maintenance/`: state snapshot and weekly log of [[Skills/vault-maintenance/SKILL|Vault Maintenance]].

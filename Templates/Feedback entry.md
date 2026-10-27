@@ -1,7 +1,7 @@
-### {{date:YYYY-MM-DD}} — <short task name>
+### {{date:YYYY-MM-DD}}: <short task name>
 - **Task:** what was asked.
 - **Worked:** what produced a good result.
-- **User corrected:** verbatim-enough corrections / rejections.
-- **Friction:** slow, confusing, or repeated steps.
-- **Proposed rule change:** concrete edit to SKILL.md, or "none".
+- **Corrected:** what the owner corrected or rejected, in their words when it matters.
+- **Friction:** slow, confusing or repeated steps.
+- **Proposed rule change:** a concrete edit to SKILL.md, or "none".
 - **Status:** open

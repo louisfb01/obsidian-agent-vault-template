@@ -1,9 +1,12 @@
 ---
 type: task
 status: active
-started: {{date:YYYY-MM-DD}}
-skill:
-tags: [working-dir]
+created: {{date:YYYY-MM-DD}}
+updated: {{date:YYYY-MM-DD}}
+summary: ""
+skill: 
+tags:
+  - working-dir
 ---
 
 # {{title}}
@@ -18,4 +21,4 @@ What this task is producing, in one or two lines.
 - [ ] 
 
 ## Outputs
-Links to the final deliverable once moved into an Areas/ folder.
+Links to the finished deliverable in its project folder.
