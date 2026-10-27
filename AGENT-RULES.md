@@ -129,7 +129,7 @@ Notes get retrieved one at a time, months later, by an agent that was not there.
 ## 5. Skills and the feedback loop
 
 - **`SKILL.md` is the source of truth** for how a job is done. The skills index (§1) only routes.
-- **Every skill folder has a `FEEDBACK.md`.** After each meaningful run, add one entry at the top of its Entries section (`Templates/Feedback entry.md`): Task, Worked, Corrected, Friction, Proposed rule change, Status.
+- **Every skill folder has a `FEEDBACK.md`.** After each meaningful run, add one entry at the top of its Entries section (`Templates/Feedback entry.md`): Task, Worked, Corrected, Friction, Proposed rule change, Status. Status is `open` while a proposed change waits to be promoted, `logged` when there is nothing to promote, then `promoted YYYY-MM-DD` or `superseded`.
 - **Promotion.** When the same lesson appears in two entries, or the owner states it as a rule, edit `SKILL.md`, bump its `updated:`, and mark the entries `promoted YYYY-MM-DD`. One-off preferences stay in `FEEDBACK.md`.
 - **Never delete feedback history.** Mark entries promoted or superseded.
 - **Lessons live in the vault, not in one agent's memory.** A preference that should survive a change of agent or model goes into the skill's `FEEDBACK.md` or `SKILL.md`, or into the project's `## For agents` section. An agent may keep a pointer to it in its own memory.

@@ -4,4 +4,4 @@
 - **Corrected:** what the owner corrected or rejected, in their words when it matters.
 - **Friction:** slow, confusing or repeated steps.
 - **Proposed rule change:** a concrete edit to SKILL.md, or "none".
-- **Status:** open
+- **Status:** logged (or open, when the proposed rule change is not "none")

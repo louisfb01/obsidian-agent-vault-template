@@ -46,6 +46,12 @@ Your setup: the recipient, the sender script and where its settings live (outsid
 - Do this on successful, no-op, blocked and failed runs whenever the browser is reachable, then make no more browser calls.
 - Report how many tabs were closed and any tab left open with the reason.
 
+## Finish the run
+
+- A run goes through every step of its skill. A blocked step gets one fresh retry. If it still fails, record the exact blocker and carry on with the steps that do not depend on it. Never end a run at the first blocker.
+- The report goes out as the task's skill says, also on a partial or failed run, and names each step that was skipped and why.
+- A task's own completion rule comes first where it is stricter.
+
 ## End of the run
 
 1. Update the task's state with what happened. State only: lessons go to `FEEDBACK.md`.

@@ -44,7 +44,7 @@ _archive/          ← stale notes, kept not deleted
 2. **Every skill learns.** Each skill has a `FEEDBACK.md`. After a run the agent logs what worked and what you corrected; when a correction repeats it is promoted into `SKILL.md` as a new default. See `AGENT-RULES.md` §5 and `Skills/example-voice/FEEDBACK.md`.
 3. **Projects resume themselves.** Each project folder has an `index.md` (current version first) and a `progress-log.md`, so a new session picks up where the last one stopped. See `Areas/Professional/example-project/`.
 4. **Scheduled tasks run skills.** A scheduled task's prompt only points to a skill (`Templates/Scheduled task prompt.md`), so its procedure improves through the same feedback loop. `Skills/scheduled-runs/` holds what every unattended run shares.
-5. **Maintenance runs on a schedule.** `Skills/vault-maintenance/` keeps hubs and links healthy and reports where the rules are not followed.
+5. **Maintenance runs on a schedule.** `Skills/vault-maintenance/` keeps hubs and links healthy and reports where the rules are not followed. It also grades how the skills did in the week's agent sessions and drafts skill edits for you to approve.
 
 ## 3-step setup
 

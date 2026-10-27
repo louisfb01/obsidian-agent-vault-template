@@ -81,7 +81,7 @@ Skills/            ← the "AI-OS": one folder per skill
     FEEDBACK.md    ← the skill's self-improvement log
   scheduled-runs/  ← what every scheduled run shares: start, browser, report, cleanup
   html-prototypes/ ← quick single-file HTML pages, prototypes and tools (artifacts, hosted sites)
-  vault-maintenance/ ← weekly health run: hubs, links, orphans, rules health
+  vault-maintenance/ ← weekly health run: hubs, links, orphans, rules health, skill health
 Areas/             ← your real notes: one hub per area, one folder per project
   Professional/example-project/  ← index.md + progress-log.md pattern
 working-dir/       ← agent scratch: task folders, research projects
@@ -122,7 +122,9 @@ _archive/          ← stale notes, kept not deleted
   else. `Skills/scheduled-runs/` holds what every unattended run shares.
 - **The vault maintains itself.** `Skills/vault-maintenance/` runs weekly from any scheduler:
   it keeps hubs and links current, finds orphans, and reports where the rules are not
-  followed, without rewriting your notes.
+  followed, without rewriting your notes. It also grades how your skills did in the week's
+  Claude Code and Codex sessions (adapted from Warp's skill-doctor) and drafts skill edits
+  for you to approve.
 - **Code stays external.** The vault holds notes and skills, plus small helper scripts a
   skill needs. Real code lives in its own Git repo, where teammates can review both the
   code and the shared skills that produced it. Never commit secrets.

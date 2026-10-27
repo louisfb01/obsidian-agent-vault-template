@@ -51,13 +51,13 @@ The map. Use this first to pick which skill to load. Each `SKILL.md` is the sour
 
 **Use when:** the weekly scheduled run, or you ask to tidy hubs, fix broken links, link orphans, or check the vault against [[AGENT-RULES|Agent Rules]].
 
-**Main output:** updated hub and index links, a dated entry in `working-dir/vault-maintenance/weekly-log.md`, a refreshed `state.json`, and a rules-health report.
+**Main output:** updated hub and index links, a dated entry in `working-dir/vault-maintenance/weekly-log.md`, a refreshed `state.json`, a rules-health report, and a skill-health report with drafted skill edits for you to approve.
 
 **Also load:** [[AGENT-RULES|Agent Rules]].
 
 **Do not use for:** reorganising folders, archiving or deleting notes, or rewriting note content.
 
-**Guardrails:** never delete, move or rename notes. Never edit personal prose. Rule gaps are reported, not fixed.
+**Guardrails:** never delete, move or rename notes. Never edit personal prose. Rule gaps are reported, not fixed, and skill edits are only drafted. Session transcripts stay outside the vault.
 
 ### HTML Prototypes
 

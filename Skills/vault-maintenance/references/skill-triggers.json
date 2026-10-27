@@ -1,0 +1,5 @@
+{
+  "example-voice": "in my voice|sound like me|rewrite (this|it) as me",
+  "html-prototypes": "\\bhtml (page|prototype|tool)|prototype|mockup",
+  "vault-maintenance": "tidy (the )?vault|broken links|orphan notes"
+}

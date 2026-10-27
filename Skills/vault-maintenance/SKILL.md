@@ -1,6 +1,6 @@
 ---
 name: vault-maintenance
-description: "Weekly maintenance of this Obsidian vault: inventory and diff against the last snapshot, keep hub and index notes current, check wiki links and orphans, report where AGENT-RULES.md is not followed, and log the run. Run it from any scheduler, or on request."
+description: "Weekly maintenance of this Obsidian vault: inventory and diff against the last snapshot, keep hub and index notes current, check wiki links and orphans, report where AGENT-RULES.md is not followed, grade how the skills did in the week's agent sessions and draft skill edits for the owner to approve, and log the run. Run it from any scheduler, or on request."
 updated: 2026-10-27
 ---
 
@@ -31,16 +31,20 @@ Steps 9, 11 and 12 are optional slots for steps that depend on your machine, suc
 8. Note lightweight cleanup opportunities in the weekly log: duplicate or raw/cleaned meeting pairs, stale TODO lists, unreferenced assets, high-value notes with no inbound links, broken links with no obvious target.
 8b. Rules health (report only; never rewrite notes to fix these). Check the vault against `AGENT-RULES.md` and record the results in the weekly log:
    - Skill folders without `FEEDBACK.md`, skill folders missing from the skills index, and index links to a `SKILL.md` that does not exist.
-   - `FEEDBACK.md` files where two or more open entries propose the same rule change: list them as promotion candidates. Do not edit `SKILL.md`.
+   - Promotion candidates: open `FEEDBACK.md` entries that propose a rule change (the step 8c scan lists them; an entry whose proposed change is "none" is not one). Flag them when two say the same thing or when the owner stated the rule (`AGENT-RULES.md` §5). Do not edit `SKILL.md`.
    - Project folders added since the last run that have no front note or are not linked from their hub.
    - Markdown notes added since the last run that have no frontmatter, excluding raw imports, `raw/` and `wiki/sources/` folders, generated files and private folders. Give the count and up to 20 paths; mark the ones named in this week's agent log as agent-written.
    - Root-level files or folders that are not in the `AGENT-RULES.md` §1 folder map.
    - Possible secrets: files named `.env*`, `*.pem`, `*.key`, `credentials*.json` or `token*.json`, and Markdown lines that look like API keys (`sk-`, `AIza`, `ghp_`, `xoxb-`). Report the path and line number only; never copy the value.
    - Agent log: whether `working-dir/agent-log/` has lines for this week, and which agents wrote them.
    - Scheduled tasks: if your scheduler keeps its prompts in files, check that each active task's prompt is a short pointer to a skill that exists (`Templates/Scheduled task prompt.md`) and that the task has a row in the `AGENT-RULES.md` §1 "Scheduled tasks" table. List the ones that fail.
+8c. Skill health (report only; never edit a skill). Follow [[Skills/vault-maintenance/references/skill-health-review|Skill health review]], adapted from Warp's skill-doctor:
+   - Run `scripts/skill_health.py` on the last 7 days of local Claude Code and Codex sessions. It writes `skill-health.json` to `working-dir/vault-maintenance/skill-health/YYYY-MM-DD/` and condensed transcripts of the flagged sessions to a folder outside the vault (for example `~/.local/state/vault-skill-health/YYYY-MM-DD/`).
+   - Read and score each flagged session (efficiency, procedure compliance, verbosity, output quality), add the week's row to `skill-health/trend.md`, and draft skill edits only for failures that clear the reference's bar, as `proposed/<skill>/SKILL.md` plus a diff.
+   - Write `report.md` in the same folder. Never copy transcript text, secrets or private content into the vault or a recap.
 9. Optional host housekeeping, for example closing stale browser tabs. Leave this out unless your setup needs it.
-10. Save the updated state after successful edits. The weekly log entry includes the date, counts, changed hub files, added/removed/renamed files, broken links fixed and left, orphans linked and left, rules health findings, and 3 to 5 suggested next improvements. Add one line for this run to `working-dir/agent-log/YYYY-MM.md`.
-11. Optional recap. If your scheduler can notify you (email, chat), send a short summary of the weekly log entry. Never put credentials in the vault.
+10. Save the updated state after successful edits. The weekly log entry includes the date, counts, changed hub files, added/removed/renamed files, broken links fixed and left, orphans linked and left, rules health findings, the skill health scores and proposals, and 3 to 5 suggested next improvements. Add one line for this run to `working-dir/agent-log/YYYY-MM.md`.
+11. Optional recap. If your scheduler can notify you (email, chat), send a short summary of the weekly log entry, including the skill health score and the number of skill edits proposed. Never put credentials in the vault.
 12. Close or clean up anything this run opened (browser tabs, temporary files) and record it.
 
 ## Guardrails
@@ -50,6 +54,7 @@ Steps 9, 11 and 12 are optional slots for steps that depend on your machine, suc
 - Keep existing headings and tone.
 - Keep changes small, reviewable and focused on navigation health.
 - Rules health (step 8b) is report-only: never add frontmatter, create FEEDBACK.md files, move folders or edit skills to fix a finding.
+- Skill health (step 8c) is report-only: it drafts edits under `working-dir/vault-maintenance/skill-health/`, and only the owner, in a session, decides what is applied. Session transcripts stay on the machine, outside the vault.
 - If a change is ambiguous, write it to the weekly log instead of guessing.
 - Local maintenance only: no web search.
 
@@ -60,6 +65,7 @@ Steps 9, 11 and 12 are optional slots for steps that depend on your machine, suc
 - Added, removed and renamed files found.
 - Broken links fixed and left unresolved.
 - Rules health findings in one or two lines.
+- Skill health score, its trend, and the number of skill edits proposed, with the report path.
 - Top 3 suggested improvements.
 - Link to `working-dir/vault-maintenance/weekly-log.md`.
 
