@@ -149,6 +149,7 @@ Notes get retrieved one at a time, months later, by an agent that was not there.
 
 - Code with dependencies, tests or reviewers lives in its own git repo outside the vault (§1). Commit and push it there; the vault links to it.
 - Small helper scripts that one skill or project needs to run can live beside it (`scripts/`, `source/`).
+- **Quick HTML pages follow the HTML prototypes skill** (skills index, §1): one self-contained file with no build step, checked at desktop and phone width, ending with an export when the page edits something. Where it is published (an artifact, a hosted site, a local file) changes only the publishing step.
 - Raw video and audio, bulk model outputs and build folders stay outside the vault (§1). Everything in the vault syncs to every device. Keep the final renders the owner needs, plus a link to where the rest lives.
 
 ## 8. Maintenance

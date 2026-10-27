@@ -80,6 +80,7 @@ Skills/            ← the "AI-OS": one folder per skill
     SKILL.md       ← what the skill does (source of truth)
     FEEDBACK.md    ← the skill's self-improvement log
   scheduled-runs/  ← what every scheduled run shares: start, browser, report, cleanup
+  html-prototypes/ ← quick single-file HTML pages, prototypes and tools (artifacts, hosted sites)
   vault-maintenance/ ← weekly health run: hubs, links, orphans, rules health
 Areas/             ← your real notes: one hub per area, one folder per project
   Professional/example-project/  ← index.md + progress-log.md pattern

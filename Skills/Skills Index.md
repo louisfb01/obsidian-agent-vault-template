@@ -23,7 +23,7 @@ The map. Use this first to pick which skill to load. Each `SKILL.md` is the sour
 - **Grounding**: who you are, background, positioning.
 - **Voice**: how things sound: [[Skills/example-voice/SKILL|Example Voice]].
 - **Research**: turn sources into a plan.
-- **Output**: the deliverable skills (each loads grounding and voice).
+- **Output**: the deliverable skills (each loads grounding and voice), for example [[Skills/html-prototypes/SKILL|HTML Prototypes]] for quick pages and tools.
 - **Vault operations**: keeping the vault healthy: [[Skills/vault-maintenance/SKILL|Vault Maintenance]].
 - **Scheduled tasks**: every scheduled task runs a skill, and every run also loads [[Skills/scheduled-runs/SKILL|Scheduled Runs]]. The scheduler's prompt only points to the skill (`Templates/Scheduled task prompt.md`); the task table is in [[AGENT-RULES]] §1.
 
@@ -58,6 +58,20 @@ The map. Use this first to pick which skill to load. Each `SKILL.md` is the sour
 **Do not use for:** reorganising folders, archiving or deleting notes, or rewriting note content.
 
 **Guardrails:** never delete, move or rename notes. Never edit personal prose. Rule gaps are reported, not fixed.
+
+### HTML Prototypes
+
+**File:** [[Skills/html-prototypes/SKILL]]
+
+**Use when:** you ask for a page, prototype, mockup, small tool, options to compare, a visual plan, explainer or report, a diagram or a mini deck in HTML, published as a Claude artifact, a ChatGPT site from Codex or a local file.
+
+**Main output:** one self-contained HTML file, checked at desktop and phone width, published where you want it.
+
+**Also load:** the host's own instructions (for example the artifact tool's), and your voice skill when the page carries public copy.
+
+**Do not use for:** production websites, or anything that needs a build step or a backend.
+
+**Guardrails:** no secrets or API keys in the page; nothing private on a public site; sample data labelled as sample.
 
 ### Scheduled Runs
 
